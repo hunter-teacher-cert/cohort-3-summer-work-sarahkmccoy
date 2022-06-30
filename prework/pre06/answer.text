@@ -1,0 +1,6 @@
+1) The program loop takes in an integer, n.  Throughout the program, n stays at 10, but i starts at n, and then changes based on whether i is even or odd.  With the argument 10, i takes on the values 10, 5, 6, 3, 4, 2, 1.  
+
+2) The program only outputs 10,5,6,3,4,2 (on separate lines). Since the loop exits once i > 1,  1 is not printed.
+
+3)This loop will always end for a positive value of n.  We know that by a process of repeated halving, you must end up meeting the condition that i is no longer greater than 1.  So as long as i takes on even values, it will be halved, and so eventually take on that condition.  Whenever i is odd, it is immediately turned into an even number smaller than the previous even number, so the process must always end.  Except if n = 2 or 1, this program will always end with i taking on the values 4,2,1. (And printing 4,2)
+This is different from the Collatz Conjecture, in which i doesn't have to get smaller each iteration.

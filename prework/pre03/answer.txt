@@ -1,0 +1,20 @@
+The output of this program is:
+
+No, I wug.
+You wugga wug.
+I wug.
+
+The way it runs is:
+1) The main method prints "No, I", then calls zoop.
+2) zoop calls baffle.
+3) baffle prints "wug"
+4) baffle calls ping, which prints a period and ends the line.
+5) Back to zoop, which prints "You wugga"
+6) zoop calls baffle again 
+7) baffle prints "wug"
+8) baffle calls ping, which prints a period and ends the line.
+9) The main method prints "I"
+10) The main method calls baffle, which prints "wug"
+11) baffle calls ping, which prints a period and ends the line.  DONE.
+
+As I suspected, having ping call baffle (which calls ping which calls baffle which calls ping which calls baffle...) results in some sort of recursive mess that keeps looping until the stack overflows and generates an error message.

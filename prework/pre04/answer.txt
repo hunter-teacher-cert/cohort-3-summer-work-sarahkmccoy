@@ -1,0 +1,13 @@
+Ex 1:  Use if (x > 0 && x < 10)
+Ex 2.1: The second time zoop is called...
+	fred = breakfast
+	bob = 4 
+Not sure if more is required than that for this answer.
+Ex 2.2 The full output is:
+	just for
+	any not more
+	It's breakfast
+	!
+I predicted it correctly except for the exclamation point being on a new line.
+
+Ex 3: I don't understand the question very well.  But if we call nlines(4), it should print 4 blank lines.  First n = 4, then 3, 2, 1...printing a blank line each time, and when n becomes 0, nothing happens, because there is no "else" condition.

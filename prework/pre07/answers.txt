@@ -1,0 +1,6 @@
+Exercise 2.
+The method banana returns the product of all the numbers in a list.  Kiwi holds the running product, and i is the index.
+
+Grapefruit looks for a given integer in a list, and returns its location if found.  Grape is the looked for integer, and i is the index.
+
+Pineapple counts how many times a given integer (apple) appears in a list (a).  Pine stands for for the current list item being tested, and Pear holds the running count of items that match the integer apple.
