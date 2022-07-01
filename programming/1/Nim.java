@@ -29,15 +29,16 @@ public class Nim
 					//machine turn
 				else {
 					if (stones > 3){
-					Random random = new Random();
-        	stonesTaken = random.nextInt(3)+1;
-				}else{
-					stonesTaken = 3;
+						Random random = new Random();
+        		stonesTaken = random.nextInt(3)+1;
+				
+					}else{
+						stonesTaken = 3;
 					}
 				
 				//calculate number of stones remaining, print
 				stones = stones - stonesTaken;
-				System.out.println("The machine took " + stonesTaken + " stones.  There are now " + stones + " stones left in the pile. "  );
+				System.out.println("The machine took " + stonesTaken + " stones. There are now " + stones + " stones left in the pile. "  );
 					//check win
 				if (stones == 0)
 					{
