@@ -20,15 +20,21 @@ public class Nim
 				stonesTaken = input.nextInt();
 					//calculate number of stones remaining, print
 				stones = stones - stonesTaken;
-				System.out.println("You took " + stonesTaken + " stones.  There are now " + stones + " stones left in the pile. "  );
+				System.out.println("You took " + stonesTaken+ ". There are now " + stones + " stones left in the pile. ");
 					//check for win
 				if (stones == 0)
 					{
 					System.out.println("You took the last stone! You won!");
 					}
 					//machine turn
-				Random random = new Random();
-        stonesTaken = random.nextInt(3)+1;
+				else {
+					if (stones > 3){
+					Random random = new Random();
+        	stonesTaken = random.nextInt(3)+1;
+				}else{
+					stonesTaken = 3;
+					}
+				
 				//calculate number of stones remaining, print
 				stones = stones - stonesTaken;
 				System.out.println("The machine took " + stonesTaken + " stones.  There are now " + stones + " stones left in the pile. "  );
@@ -37,6 +43,9 @@ public class Nim
 					{
 					System.out.println("The machine took the last stone! You lost!");
 					}
+					
+				}
+				
 			}
 			
 		}
