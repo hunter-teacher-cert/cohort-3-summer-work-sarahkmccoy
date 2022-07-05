@@ -37,7 +37,7 @@ public class ArrayPractice
   }
 
 
-//prints any array of any size
+//prints a 1D array of any size
   public static void printArray( int[] data )
   {
     System.out.print("Array: { ");
