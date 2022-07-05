@@ -1,11 +1,11 @@
+/**
+ * Array2DPractice by Team 9
+ * Adam Prado
+ * Sarah McCoy, Kirk Martin, Jihae Park
+ */
+
 import java.io.*;
 import java.util.*;
-
-/**
- * Array2DPractice by Team LucidThinkeren
- * First Last
- * collaborators: Sarah McCo, JiHae Park, Adam Prado, Kirk Martin
- */
 
 /**
    INSTRUCTIONS:
@@ -40,7 +40,7 @@ import java.util.*;
    other methods.
 */
 
-public class Array2DPractice
+public class ArrayTest
 {
   public static char[][] buildBoard( int rows, int cols, char value )
   {
@@ -57,31 +57,17 @@ public class Array2DPractice
      pretty prints a 2D array of characters
      This should print the array as a grid
   */
-
-	// //prints a 1D array of any size
- //  public static void printArray( int[] data )
- //  {
- //    System.out.print("Array: { ");
- //     for (int i = 0; i < data.length; i++) {
- //      System.out.print(data[i] + " ");
- //    }
- //    System.out.println("}");
- //  }
-
   public static void printBoard( char[][] board )
   {
-    //The definition of rows and cols is not necessary but improves readibility (vs. putting board.length and board[0].length in the for i loop)
-		int rows = board.length;
-		int cols = board[0].length;
-		//The length of the 2D array is the number of rows in that array (number of sublists)
-		for (int i = 0; i < rows; i++) {
-			//The number of columns in the array is the same as the length of one of the rows, so just use the first one.
-      for (int j = 0; j < cols; j++) {
-        System.out.print(board[i][j] + " ");
+    /* YOUR AWESOME CODE HERE */
+    for (int i = 0; i < board.length; i++) {
+      for (int j = 0; j < board[0].length; j++) {
+         System.out.print(board[i][j] + " "); //maybe we want commas between them?
       }
-				System.out.println();
-  	}
-	}
+      System.out.println();
+    }
+    
+  }
 
   /**
      Parameters:
@@ -105,11 +91,11 @@ public class Array2DPractice
   */
   public static void setRow( char[][] board, int row, char value )
   {
-		//iterate through the length of the row you are overwriting.  You could also used board[0].length, but I suppose this is more generalized (in case of jagged array)].  As in printBoard, I could have defined col as board[row].length first
-   for (int i=0; i < board[row].length; i++)
-		 //overwrite each element in that row
-		 board[row][i] = value;
+    for(int i = 0; i<board[row].length;i++){
+      board[row][i] = value;
+    }
   }
+
 
   /**
      creates and returns a new 2D array of char the same size as
@@ -171,31 +157,18 @@ public class Array2DPractice
     // board[row+1][col]='X';      //bottom center
     // board[row+1][col+1]='X';    //bottom right
 
-    if(col>0){  //checks if left most column 
-      board[row][col-1]='X';  
-    }
-    if(col<board[0].length-1){
-      board[row][col+1]='X';
-    }
-    if(row>0){   //check if not on top row
-      board[row-1][col]='X';
-       if(col>0){//checks if left most column 
-         board[row-1][col-1]='X';
+		//TRYING DIFFERENT METHOD HERE--iterate through the items around the given one, and check if they are an edge.  If not edge, explode.....but having trouble with the edge cases.  Works in the middle.
+     for (int i = row-1; i < row+2; i++) {
+      for (int j = col-1; j < col+2; j++) {
+        if(i>0 && i<board.length-1 !(row==i && col==j)){ //&& j>0 && j<board[0].length-1 && 
+          if(&& j>0 && j<board[0].length-1 )
+          board[i][j]='x';
+          
+        }
       }
-      if(col<board[0].length-1){
-        board[row-1][col+1]='X';
-      }  
-    }
-    if(row<board.length-1){  //check if not on bottom row
-       if(col>0){//checks if left most column 
-         board[row+1][col-1]='X';
-       }
-      board[row+1][col]='X';
-      if(col<board[0].length-1){
-        board[row+1][col+1]='X';  
-      }
-    }
+     }
   }
+
   /**
      This method will search through the 2D array board and it will
      explode each square that contains the char c (using the above
@@ -211,10 +184,16 @@ public class Array2DPractice
      qqqXz
      explodeAllchar(board,'z') will change board to:
   */
-  // public static void explodeAllChar(char[][] board, char c)
-  // {
-  //   /* YOUR AWESOME CODE HERE */
-  // }
+  public static void explodeAllChar(char[][] board, char c)
+  {
+    for (int i = 0; i < board.length; i++) {
+      for (int j = 0; j < board[0].length; j++) {
+        if(board[i][j]== c){
+          explodeSquare(board,i,j);
+        }
+      }
+    }
+  }
 
 
   /**
@@ -252,12 +231,13 @@ public class Array2DPractice
      xxxRxx
      Note that the method has to stop at the bottom of the array.
   */
-  // public static void downString( char[][] board, int row, int col, String word )
-  // {
-  //   /* YOUR AWESOME CODE HERE */
-  // }
+  public static void downString( char[][] board, int row, int col, String word )
+  {
+    /* YOUR AWESOME CODE HERE */
+  }
 
-public static void main( String[] args )
+
+  public static void main( String[] args )
   {
     System.out.println("creates a board 5 rows, 10 columns, all z");
     char[][] b = buildBoard(5,10,'z');
@@ -270,8 +250,11 @@ public static void main( String[] args )
     char[][] arrCopy = copyBoard(b);
     printBoard(arrCopy);
     System.out.println();
-    System.out.println("This will explode the board at position 2,4 with x's");
-    explodeSquare(arrCopy,2,4);
+    // System.out.println("This will explode the board at position 2,4 with x's");
+    // explodeSquare(arrCopy,2,4);
+    // printBoard(arrCopy);
+    System.out.println("This will explode the board at position 0,4 with x's");
+    explodeSquare(arrCopy,0,4);
      printBoard(arrCopy);
     /*
       Note, you can directly set elements in the board
@@ -281,5 +264,3 @@ public static void main( String[] args )
     */
   }
 }
-
-
