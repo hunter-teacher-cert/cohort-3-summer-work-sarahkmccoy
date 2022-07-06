@@ -201,12 +201,13 @@ public class Array2DPractice
   */
   public static void explodeAllChar(char[][] board, char c)
   {
-		//Defining number of rows and columns in terms of length functions.
+		//Defining number of rows and columns in terms of length functions.  This will need more testing because adjacent instances of the target cause problems
     int rows = board.length;
 		int cols = board[0].length;
 		
 		for (int i = 0; i < rows; i++) {
       for (int j = 0; j < cols; j++) {
+				//Note that the parameter c is not in single quotes
 				if (board[i][j]== c){
 					explodeSquare(board, i, j);
 				}
@@ -215,45 +216,17 @@ public class Array2DPractice
 	}
 
 
-  /**
-     Parameters:
-     board - a 2D array of char
-     row,col - ints specifying a location in board
-     word - a String that you want to insert into the board.
-     This will insert the parameter word into board in the downward
-     direction. See examples below
-     Example:
-     Given this array
-     xxxxxx
-     xxxxxx
-     xxxxxx
-     xxxxxx
-     xxxxxx
-     xxxxxx
-     xxxxxx
-     downString(board,1,1,"Hello") will change board to:
-     xxxxxx
-     xHxxxx
-     xExxxx
-     xLxxxx
-     xLxxxx
-     xOxxxx
-     xxxxxx
-     Given the above array, downString(board,4,3,"World") will
-     change board to:
-     xxxxxx
-     xHxxxx
-     xExxxx
-     xLxxxx
-     xLxWxx
-     xOxOxx
-     xxxRxx
-     Note that the method has to stop at the bottom of the array.
-  */
-  // public static void downString( char[][] board, int row, int col, String word )
-  // {
-  //   /* YOUR AWESOME CODE HERE */
-  // }
+ // LIFTED FROM RACHEL KAUFMAN.  downString will insert the parameter word into board at the given position in a downward direction.
+public static void downString( char[][] board, int row, int col, String word )
+  {
+    for (int i=row; i<board.length; i++){
+      if (i-row < word.length()) {
+        board[i][col] = word.charAt(i-row);
+      } else {
+        break;
+      }
+    }
+  }
 
 public static void main( String[] args )
   {
