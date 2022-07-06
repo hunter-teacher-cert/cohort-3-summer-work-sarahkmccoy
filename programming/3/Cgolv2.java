@@ -1,3 +1,5 @@
+import java.io.*;
+import java.util.*;
 
 /**
  * Group 9 July 6, 2022 Conway's Game of Life by Team AreWeSentientYet?
@@ -21,7 +23,7 @@
    NOTA BENE:  All births and deaths occur simultaneously. Together, they constitute a single generation.
 */
 
-public class Cgol
+public class Cgolv2
 {
 
   //create, initialize, and return  empty board (all cells dead)
@@ -133,11 +135,11 @@ public class Cgol
   //generate and return a new board representing next generation
   public static char[][] generateNextBoard( char[][] board )
   {
-		
+
 		int rows = board.length;
 		int cols = board[0].length;
-		char[][] newBoard = new char[rows][cols];
-		
+    char[][] newBoard = new char [rows][cols];    //Note: In order to have modifications not affect results you have to create a newBoard so that you DON'T lose original data (because you want results to be simultaneous)
+
 		for (int i = 0; i < rows; i++) {
       for (int j = 0; j < cols; j++) {
         newBoard[i][j] = getNextGenCell(board, i, j);
@@ -153,10 +155,10 @@ public class Cgol
     board = createNewBoard(10,10);
 
     //breathe life into some cells:
-    setCell(board, 0, 3, 'X');
+    setCell(board, 0, 0, 'X');
     setCell(board, 0, 2, 'X');
     setCell(board, 1, 1, 'X');
-		setCell(board, 3, 0, 'X');
+		setCell(board, 2, 0, 'X');
 
     // TASK:
     // Once your initial version is running,
