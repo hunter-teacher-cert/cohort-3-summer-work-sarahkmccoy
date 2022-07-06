@@ -3,8 +3,8 @@ import java.util.*;
 
 /**
  * Array2DPractice by Team LucidThinkeren
- * First Last
- * collaborators: Sarah McCo, JiHae Park, Adam Prado, Kirk Martin
+ * Sarah McCoy
+ * collaborators:  JiHae Park, Adam Prado, Kirk Martin
  */
 
 /**
@@ -128,73 +128,61 @@ public class Array2DPractice
   }
 
 
-  /**
-     Parameters:
-     board - a 2D array of char
-     row,col - ints specifying a location in board
-     Returns:
-     nothing
-     A location in a 2D array can be though of as having 6
-     neighbors.  In the below 2D array, the neighbors of the element
-     marked Q are the numbered elements.
-     oooooo
-     o123oo
-     o4Q5oo
-     o678oo
-     oooooo
-     This method should change all the neighbor cells (elements) to an X
-     but not change the element at row,col
-     Ex:
-     Given the 2D array
-     QQQQQ
-     QQQQQ
-     QQQQQ
-     QQQQQ
-     explodeSquare(board,1,1) will change the array to
-     XXXQQ
-     XQXQQ
-     XXXQQ
-     QQQQQ
-     Note: Make sure to correctly handle the cases when you try
-     to explode an element on the edges.
-  */
-  public static void explodeSquare( char[][] board, int row, int col )
-  {
-    /* YOUR AWESOME CODE HERE */ 
-    // below are the positions of all neighboring cells
-    // board[row-1][col-1]='X';  //up left
-    // board[row-1][col]='X';    //up center
-    // board[row-1][col+1]='X';  //up right
-    // board[row][col-1]='X';       //mid left
-    // board[row][col+1]='X';       //mid right
-    // board[row+1][col-1]='X';    //bottom left
-    // board[row+1][col]='X';      //bottom center
-    // board[row+1][col+1]='X';    //bottom right
+  // public static void explodeSquare( char[][] board, int row, int col )
+  // {
+  //   /VERSION 1
+  //   // below are the positions of all neighboring cells
+  //   // board[row-1][col-1]='X';  //up left
+  //   // board[row-1][col]='X';    //up center
+  //   // board[row-1][col+1]='X';  //up right
+  //   // board[row][col-1]='X';       //mid left
+  //   // board[row][col+1]='X';       //mid right
+  //   // board[row+1][col-1]='X';    //bottom left
+  //   // board[row+1][col]='X';      //bottom center
+  //   // board[row+1][col+1]='X';    //bottom right
 
-    if(col>0){  //checks if left most column 
-      board[row][col-1]='X';  
-    }
-    if(col<board[0].length-1){
-      board[row][col+1]='X';
-    }
-    if(row>0){   //check if not on top row
-      board[row-1][col]='X';
-       if(col>0){//checks if left most column 
-         board[row-1][col-1]='X';
+  //   if(col>0){  //checks if left most column 
+  //     board[row][col-1]='X';  
+  //   }
+  //   if(col<board[0].length-1){
+  //     board[row][col+1]='X';
+  //   }
+  //   if(row>0){   //check if not on top row
+  //     board[row-1][col]='X';
+  //      if(col>0){//checks if left most column 
+  //        board[row-1][col-1]='X';
+  //     }
+  //     if(col<board[0].length-1){
+  //       board[row-1][col+1]='X';
+  //     }  
+  //   }
+  //   if(row<board.length-1){  //check if not on bottom row
+  //      if(col>0){//checks if left most column 
+  //        board[row+1][col-1]='X';
+  //      }
+  //     board[row+1][col]='X';
+  //     if(col<board[0].length-1){
+  //       board[row+1][col+1]='X';  
+  //     }
+  //   }
+  // }
+//VERSION 2: TRYING DIFFERENT METHOD HERE--iterate through the items around the given one, and check if they are an edge.  If not edge, explode.
+
+	public static void explodeSquare( char[][] board, int row, int col )
+  {
+     for (int i = row-1; i < row+2; i++) {
+      for (int j = col-1; j < col+2; j++) {
+        if(i > -1 && 
+						i < board.length && 
+						!(row==i && col==j) &&
+						j > -1 &&
+						j<board[0].length){
+				
+          board[i][j]='x';
+          
+        }
       }
-      if(col<board[0].length-1){
-        board[row-1][col+1]='X';
-      }  
-    }
-    if(row<board.length-1){  //check if not on bottom row
-       if(col>0){//checks if left most column 
-         board[row+1][col-1]='X';
-       }
-      board[row+1][col]='X';
-      if(col<board[0].length-1){
-        board[row+1][col+1]='X';  
-      }
-    }
+     }
   }
   /**
      This method will search through the 2D array board and it will
@@ -211,10 +199,20 @@ public class Array2DPractice
      qqqXz
      explodeAllchar(board,'z') will change board to:
   */
-  // public static void explodeAllChar(char[][] board, char c)
-  // {
-  //   /* YOUR AWESOME CODE HERE */
-  // }
+  public static void explodeAllChar(char[][] board, char c)
+  {
+		//Defining number of rows and columns in terms of length functions.
+    int rows = board.length;
+		int cols = board[0].length;
+		
+		for (int i = 0; i < rows; i++) {
+      for (int j = 0; j < cols; j++) {
+				if (board[i][j]== c){
+					explodeSquare(board, i, j);
+				}
+			}
+  	}
+	}
 
 
   /**
@@ -262,17 +260,60 @@ public static void main( String[] args )
     System.out.println("creates a board 5 rows, 10 columns, all z");
     char[][] b = buildBoard(5,10,'z');
     printBoard(b);
+		//replace 3rd row with "@"
     setRow(b,2,'@');
     System.out.println();
     printBoard(b);
     
     System.out.println();
+		//copy board and print
     char[][] arrCopy = copyBoard(b);
     printBoard(arrCopy);
     System.out.println();
-    System.out.println("This will explode the board at position 2,4 with x's");
-    explodeSquare(arrCopy,2,4);
-     printBoard(arrCopy);
+   
+		//explode tests
+		System.out.println("This will explode the board at position 2,4 with x's");
+		//re-initializing a board to zs
+		char[][] a = buildBoard(5,10,'z');
+    explodeSquare(a,2,4);
+    printBoard(a);
+
+		System.out.println();
+    System.out.println("This will explode the board at position 0,4 with x's");
+		//re-initializing a board to zs
+		char[][] c = buildBoard(5,10,'z');
+    explodeSquare(c,0,4);
+    printBoard(c);
+
+		System.out.println();
+		
+		System.out.println("This will explode the board at position 0,0 with x's");
+		char[][] d = buildBoard(5,10,'z');
+    explodeSquare(d,0,0);
+		printBoard(d);
+
+		System.out.println();
+		
+		System.out.println("This will explode the board at position 4,9 with x's");
+		//re-initializing a board to zs
+		char[][] e = buildBoard(5,10,'z');
+    explodeSquare(e,4,9);
+    printBoard(e);
+
+		System.out.println();
+
+		
+		//re-initializing a board to zs
+		System.out.println("This will explode all instances of $");
+		char[][] f = buildBoard(5,10,'z');
+    //Assigning some elements to the character '$'' :
+		f[2][2]='$';
+		f[4][8]='$';
+		explodeAllChar(f,'$');
+    printBoard(f);
+
+		
+		//Assigning some elements to the letter c:
     /*
       Note, you can directly set elements in the board
       using array notation like b[3][2]='z' and you

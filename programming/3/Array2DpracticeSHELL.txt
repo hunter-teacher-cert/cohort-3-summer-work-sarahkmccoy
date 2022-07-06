@@ -135,7 +135,7 @@ public class Array2DPractice
 
   /**
      This method will search through the 2D array board and it will
-     explode each square that contains the char c (using the above
+     explode each square that contains the char z (using the above
      definition of exploding).
      Example:
      Given the array
