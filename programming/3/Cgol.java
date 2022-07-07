@@ -136,6 +136,7 @@ public class Cgol
 		
 		int rows = board.length;
 		int cols = board[0].length;
+		//its' necessary to generate a NEWBOARD to avoid a chain of reaction...if you overwrite the original board as you go, it effects "the future"  Simultaneous change.
 		char[][] newBoard = new char[rows][cols];
 		
 		for (int i = 0; i < rows; i++) {
