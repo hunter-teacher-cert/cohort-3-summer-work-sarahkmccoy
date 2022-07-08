@@ -4,14 +4,25 @@ import java.util.*;
 
 /**
  * Time class by Team LucidThinkeren
+ * First Last
  * collaborators: Sarah McCoy, Rachel Kaufman, Steve Sabaugh, Tanya Wardally
  */
 
 /**
+   INSTRUCTIONS:
+
+   This file contains the starter code for our Time class.
+
+   The class here uses ints for hours, minutes, and seconds but you
+   could decide to change the internal representation to just store
+   an int representing a number of seconds.
+
+   Place this file in a folder named programming/5/Time.java
+
    Basic level (complete all):
    + public Time(int hrs, int mins, int secs) - constructor
    + public void toString()
-   + public void set(int hrs, int mins, int secs)
+   - public void set(int hrs, int mins, int secs)
 
    Intermediate level (complete Basic methods plus this method):
    - public void add(Time other)
@@ -36,9 +47,9 @@ public class Time {
 
     // Constructors
     public Time(){
-			hours = 0;
-			minutes = 0;
-			seconds = 0;
+	hours = 0;
+	minutes = 0;
+	seconds = 0;
 	
     }
 
@@ -50,9 +61,9 @@ public class Time {
        
      */
     public Time(int hrs, int mins, int secs){
-    	hours = hrs;
-    	minutes = mins;
-  		seconds = secs;
+    hours = hrs;
+    minutes = mins;
+    seconds = secs;
 
     }
     
@@ -68,6 +79,10 @@ public class Time {
       
 	return dateString;
     }
+
+
+    
+
     /**
        Parameters:
        - hrs,mins,secs - ints representing a time
@@ -75,11 +90,12 @@ public class Time {
        modifies this instance to represent the time hrs:mins:secs
     */
     public void set(int hrs, int mins, int secs){
-      hours = hrs;
-      minutes = mins;
-      seconds = secs;
+	// add the code to add the time represented by other
+	// to this instance.
 
     }
+
+    
 
     /**
        Parameters:
@@ -104,9 +120,7 @@ public class Time {
        false otherwise.
     */
     public boolean equals(Time other){
-	    if (other.equals(this.hours + ":" + this.minutes + ":" + this.seconds)){
-        return true;
-      }
+	// your code here)
 
 	return false; // change this
     }
