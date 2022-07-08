@@ -43,14 +43,11 @@ public class Time {
     }
 
     /**
-       Parameters:
-       - hrs, mins, secs - the time you want to create the class as
-
-       Initialize this instance to represent hrs:mins:secs as the time.
-       
+       This over
      */
     public Time(int hrs, int mins, int secs){
-    	hours = hrs;
+    	
+			hours = hrs;
     	minutes = mins;
   		seconds = secs;
 
@@ -63,10 +60,10 @@ public class Time {
        returns a string representation of the time
     */
     public String toString(){
-
-      String dateString = hours + ":" + minutes + ":" + seconds;
+      String timeString = String.format("%02d:%02d:%02d",hours,minutes, seconds);
+     //String timeString = hours + ":" + minutes + ":" + seconds;
       
-	return dateString;
+	return timeString;//I changed this from "datestring".  So we don't really need to create a variable, doesn't increase clarity...?
     }
     /**
        Parameters:
@@ -75,7 +72,8 @@ public class Time {
        modifies this instance to represent the time hrs:mins:secs
     */
     public void set(int hrs, int mins, int secs){
-      hours = hrs;
+      //This allows us to overwrite an ALREADY created object that has been instantiated using either Time() or Time(h, m ,s)
+			hours = hrs;
       minutes = mins;
       seconds = secs;
 
@@ -91,6 +89,14 @@ public class Time {
     public void add(Time other){
 	// add the code to add the time represented by other
 	// to this instance.
+	//You could use this.hours to help distinguish, but not really necessary.
+				hours+=other.hours;
+				minutes+=other.minutes;
+				seconds+=other.seconds;
+//now adjust for over 60, done in opposite order
+				seconds = seconds%60;
+				minutes = minutes + seconds/60;
+				hours = hours + minutes/60;
 
     }
 
@@ -104,7 +110,8 @@ public class Time {
        false otherwise.
     */
     public boolean equals(Time other){
-	    if (other.equals(this.hours + ":" + this.minutes + ":" + this.seconds)){
+	    //if (other.equals(this.hours + ":" + this.minutes + ":" + this.seconds)){
+            if(other.equals(String.format("%02d:%02d:%02d",hours,minutes, seconds)){
         return true;
       }
 
