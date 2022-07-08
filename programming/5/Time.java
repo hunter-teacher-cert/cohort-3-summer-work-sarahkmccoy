@@ -5,7 +5,7 @@ import java.util.*;
 /**
  * Time class by Team LucidThinkeren
  * First Last
- * collaborators: First Last, First Last
+ * collaborators: Sarah McCoy, Rachel Kaufman, Steve Sabaugh, Tanya Wardally
  */
 
 /**
@@ -20,7 +20,7 @@ import java.util.*;
    Place this file in a folder named programming/5/Time.java
 
    Basic level (complete all):
-   - public Time(int hrs, int mins, int secs) - constructor
+   + public Time(int hrs, int mins, int secs) - constructor
    - public void toString()
    - public void set(int hrs, int mins, int secs)
 
@@ -41,15 +41,15 @@ public class Time {
     // You can change this if you want to use the alternate
     // implementation of just storing the overall seconds.
     
-    int hours;
-    int minutes;
-    int seconds;
+    private int hours;
+    private int minutes;
+    private int seconds;
 
     // Constructors
     public Time(){
-	this.hours = 0;
-	this.minutes = 0;
-	this.seconds = 0;
+	hours = 0;
+	minutes = 0;
+	seconds = 0;
 	
     }
 
@@ -61,9 +61,10 @@ public class Time {
        
      */
     public Time(int hrs, int mins, int secs){
+    hours = hrs;
+    minutes = mins;
+    seconds = secs;
 
-	// your code here
-	
     }
     
     
@@ -73,7 +74,10 @@ public class Time {
        returns a string representation of the time
     */
     public String toString(){
-	return("This should be changed to return the time in a nice form");
+
+      String dateString = hours + ":" + minutes + ":" + seconds;
+      
+	return dateString;
     }
 
 

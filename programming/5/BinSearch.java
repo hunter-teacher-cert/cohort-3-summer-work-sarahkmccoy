@@ -34,7 +34,7 @@ public class BinSearch
 
     //exit case. If lo & hi have crossed, target not present
     if (mPos < 0.5)//not sure about this
-      return /* YOUR SMART CODE HERE */ ;
+      return -1;//there is no -1 index  ;
 
     // target found
     if ( /* YOUR SMART CODE HERE */ ) {
