@@ -75,7 +75,7 @@ public class Time {
       //This allows us to overwrite an ALREADY created object that has been instantiated using either Time() or Time(h, m ,s)
 			hours = hrs;
       minutes = mins;
-      seconds = secs;
+    	seconds = secs;
 
     }
 
@@ -93,11 +93,17 @@ public class Time {
 				hours+=other.hours;
 				minutes+=other.minutes;
 				seconds+=other.seconds;
-//now adjust for over 60, done in opposite order
-				seconds = seconds%60;
-				minutes = minutes + seconds/60;
-				hours = hours + minutes/60;
-
+//now adjust for over 60, done in opposite order.  Using in between variable because if I overwrite seconds, it messes up the next operation.  Not very elegant?
+			
+			//the remainder when divided by 60 is the # of seconds that haven't rolled into minutes	
+				int seconds2 = seconds%60;
+			//sec/60 takes the floor of the quotient, which gets rolled into minutes
+				int minutes2 = minutes + seconds/60;
+				int hours2 = hours + minutes/60;
+//now reassign back to original
+				hours = hours2;
+				minutes = minutes2;
+				seconds = seconds2;
     }
 
 
@@ -110,13 +116,14 @@ public class Time {
        false otherwise.
     */
     public boolean equals(Time other){
-	    //if (other.equals(this.hours + ":" + this.minutes + ":" + this.seconds)){
-            if(other.equals(String.format("%02d:%02d:%02d",hours,minutes, seconds)){
+	    //if (other.equals(this.hours + ":" + this.minutes + ":" + this.seconds))        										  		
+			if(other.equals(String.format("%02d:%02d:%02d", hours, minutes, seconds)))
+		 		{
         return true;
-      }
+     	 	}
 
-	return false; // change this
-    }
+				return false; 
+   	}
 
     /**
        Parameters:
