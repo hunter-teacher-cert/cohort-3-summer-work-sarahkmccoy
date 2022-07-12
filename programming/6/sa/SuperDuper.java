@@ -2,9 +2,8 @@
  * SuperArray by Team MarvelvsDC
  * Michael Randazzo
  * collaborators: Alise Braick, Tanya Wardally, Sarah McCoy
-
  */
-
+//THIS HAS SOME EXTRA ABILITIES IN ADD AT INDEX
 /**
    SKELETON
    SuperArray is a wrapper class for an array.
@@ -20,7 +19,7 @@ import java.io.*;
 import java.util.*;
 
 
-public class SuperArray
+public class SuperDuper
 {
   /**
      SUBGOAL:
@@ -155,15 +154,20 @@ public class SuperArray
 	//inserts an element at a given index
   {
     // see if there's enough room
-    // if ( index > data.length){
-    //   grow(index);
-    // }
+    while ( index > data.length){
+       grow();
+    }
+    if(index > numberElements){
+      data[index] = value;
+      numberElements = index;
+    }
     
     if( numberElements == data.length){
      grow(); 
    }
     // shift elements toward the end of the array
-    for(int i= numberElements-1; i>= index; i--){
+    else{
+      for(int i= numberElements-1; i>= index; i--){
       data[i+1] = data[i];
       
     }
@@ -173,14 +177,15 @@ public class SuperArray
 
     // increment numElements
     numberElements++;
+    }
     //data[numberElements++] = value;     increments as well
   }
 
-//Private because there is no reason to call this outside the class.  It is an internal operation that is called from other methods in this class.
+
   private void grow()
   {
     // create a new array with extra space
-    
+    // Q: How did you decide how much to increase capacity by?
     int updatedData[] = new int[data.length+5];
 
     // copy over all the elements from the old array to the new one
