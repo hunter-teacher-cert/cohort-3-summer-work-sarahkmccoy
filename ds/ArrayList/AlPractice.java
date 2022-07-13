@@ -70,9 +70,11 @@ public class AlPractice{
   - No other values should be modified.
   */
   public static void swapElements(ArrayList<Integer> dataList, int index1,int index2){
-
+		//hold the first value in a variable
 		int temp = dataList.get(index1);
+		//overwrite the first value with the second value
 		dataList.set(index1, dataList.get(index2));
+		//overwrite the second value with the temp value
 		dataList.set(index2, temp);
 
   }
@@ -86,7 +88,7 @@ public class AlPractice{
   */
   public static void removeValue(ArrayList<Integer> dataList, int valueToRemove){
     for(int i = 0;i < dataList.size();i++){
-      if(i == valueToRemove){
+      if(dataList.get(i) == valueToRemove){
         dataList.remove(i);
       }
     }
@@ -106,7 +108,14 @@ public class AlPractice{
   - The parameter ArrayLists should not be modified.
   */
   public static ArrayList<Integer> sumLists(ArrayList<Integer>ListA,ArrayList<Integer>ListB){
-    return null;//placeholder to compile.
+    
+		ArrayList<Integer> newList = new ArrayList<Integer>();
+
+    for(int i = 0; i < ListA.size(); i ++){
+      newList.add(ListA.get(i)+ListB.get(i));
+    }
+    return newList;//placeholder to compile.
+		
   }
 
   /** zipLists
@@ -120,26 +129,40 @@ public class AlPractice{
   - The parameter ArrayLists should not be modified.
   */
   public static ArrayList<Integer> zipLists(ArrayList<Integer>ListA,ArrayList<Integer>ListB){
-    return null;//placeholder to compile.
+    ArrayList <Integer> newList = new ArrayList <Integer> ();
+    newList.addAll(ListA);
+    for(int i = 0;i < ListB.size();i++){
+      newList.add(i+1,(ListB.get(i)));
+    }
+    
+    return newList;//placeholder to compile.
+
+		
   }
-
-
-
 
   public static void main(String[] args) {
 
     ArrayList<Integer> al;
-
+ 		ArrayList<Integer> al2;
     al = buildRandomList(10,10);
+		al2 = buildRandomList(10,10);
     System.out.println(al);
 
-    // Uncomment these to test swapElements
+    System.out.println("Swapping elements at index 2 and 6");// 
     swapElements(al,2,6);
     System.out.println(al);
 
-		 System.out.println(sumOfList(al));
-
-    // Uncomment these to test removeValue
+		
+		//test sum
+		System.out.println("Sum of the list");
+		System.out.println(sumOfList(al));
+	
+		System.out.println("List of sums of the corresponding values");
+		System.out.println(al);
+		System.out.println(al2);
+		System.out.println(sumLists(al, al2));
+		
+  	System.out.println("Appending 5,10,5,13, and then overwriting index 2 and 3 with 5 (set)");
     al.add(5);
     al.add(10);
     al.add(5);
@@ -147,6 +170,8 @@ public class AlPractice{
     al.set(2,5);
     al.set(3,5);
     System.out.println(al);
+
+		System.out.println("Removing all 5's from list?  Didn't wrk on two 5s in a row");
     removeValue(al,5);
     System.out.println(al);
 
