@@ -4,7 +4,10 @@ import java.util.*;
 public class Driver{
   public static void main(String[] args) {
     LinkedList l = new LinkedList();
-    
-    System.out.println(l);
+		l.add("Steve");
+		l.add("Yanique");
+		l.add("Sarah");
+ 
+ System.out.println(l);
   }
 }
