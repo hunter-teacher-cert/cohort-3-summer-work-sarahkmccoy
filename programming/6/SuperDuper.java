@@ -35,7 +35,7 @@ public class SuperDuper
 
   // ~~~~~~~~~~~~~~~ CONSTRUCTORS ~~~~~~~~~~~~~~~
   //overloaded constructor -- allows specification of initial capacity
-  public SuperArray( int size )
+  public SuperArray(int size)
   {
     //init underlying/inner storage of specified capacity
     /* YOUR SIMPLE+SMART CODE HERE */
