@@ -1,0 +1,67 @@
+Yenmin Young, Sarah McCoy, Yanique Sears, Jessica Novillo Argudo
+Team :: ROOM 13
+Methods - Summer 2022
+
+CODE TRACING in the classroom
+======================================
+
+
+PROS:
+---------------------------------------
+<general positive aspects of incorporating code or algorithm tracing into a CS course, from your perspective>
+
+- It allows us to undestand how the computer is going to process the algorithm.
+- Helps break down the steps, so that you can understand better what is happening in the code
+- Helps you plan and diagram how you want to write your code
+- Helps you debug and identify where the error might be.
+- Helps teachers assess students' understanding of the code and computational thinking.
+- Verbalize thought process
+
+
+CONS:
+---------------------------------------
+<general negative aspects of incorporating code or algorithm tracing into a CS course, from your perspective>
+- Different groups of people need different amounts of time.
+- If it's too slow, some people will check out
+- If it's too fast, some people will be lost from the diagrams and feel less confident in attempting the task
+- Challenging when you don't know how to visualize or put to pen vague thoughts in the brain
+
+
+
+
+BEST FOR:
+---------------------------------------
+<types of activities from courses you teach or have taught that could benefit from an emphasis on tracing>
+- for or while loops
+- Recursions
+- When variables change values
+
+LEAST-SUITED TO:
+---------------------------------------
+<opposite of above -- and why>
+- If there are too many methods in the main method 
+
+PROVEN PRO-TIPS:
+---------------------------------------
+<
+ anything that has worked well for any member of your team, in the way of ...
+ * live tracing ("trace-along" a la livecoding)
+ * tracing as an assignment
+ * tools, physical/online/otherwise that make it easier/clearer
+ * etc 
+>
+- Colors!!
+- Physical whiteboards or a highly functioning collaborative e-whiteboard
+- Having the code there too for easy access and annotatability
+- Show different templates of various types of diagrams (choose from menu which is the best diagram)
+
+
+RESOURCES:
+---------------------------------------
+< any links, reading titles, names, etc. you have find useful >
+
+- https://pythontutor.com/render.html#mode=edit
+
+OTHER:
+---------------------------------------
+< anything you like, not already covered in prior prompts. >
