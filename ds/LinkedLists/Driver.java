@@ -22,9 +22,15 @@ public class Driver{
 	System.out.println("Adding at index 5--end of 	list?");
 	l.add(6, "HELLO");
 	System.out.println(l);
-		System.out.println("Adding at index 0--front of list?");
+	System.out.println("Adding at index 0--front of list?");
 	l.add(0, "HEY");
 	System.out.println(l);
+	System.out.println("Index of Yanique");
+  System.out.println(l.indexOf("Yanique"));
+  System.out.println("Index of HEY");
+	System.out.println(l.indexOf("HEY"));
+	System.out.println("Index of HELLO");
+  System.out.println(l.indexOf("HELLO"));
   }
 
 }

@@ -145,8 +145,18 @@ public class LinkedList{
   indexOf("d") would return 3 since "d" is at location 3.
 
   */
+
   public int indexOf(String value){
-    return 0;
+    Node temp = head;
+    int ctr = 0;
+    
+    while (temp.getData() != value){
+      temp = temp.getNext();
+      ctr++;
+    }
+    return ctr;
+   
+    
   }
 
 
