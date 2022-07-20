@@ -1,21 +1,25 @@
-* Last name: McCoy
-* First name: Sarah
-* Github username: sarahkmccoy
+# CS Unplugged Activity Plan
+#### by Team High 5!!!
+Roster: Alicia Wade, Sarah McCoy, Ed Hawkins
 
-* Instructions:
+# Exploring Variables / Baggies and Sticky Notes as Manipulatives
 
-Fill out the top of this form, commit and push it back to GitHub.
+### Background
+This activity is a re-mix of an activity from Code.org.
 
-For each assignment make a directory as specified in the assignment
-specification. Add the required files, commit and push them up to
-Github.
+### Participant pre-requisites
+Students should know what variables and operators are. The activity is written for javascript but can be adopted to be language agnostic.
 
+### Scaffolding / Differentiation 
+* Student groups can work independently to complete the activity or work with the instructor for scaffolding 
+* Groups of 3 or 4 are suggested (pairs are ok)
+* Use the extension activity for more advanced students.
 
+### Go!
+1. Get a copy of the slide deck and a pack of materials.
+1. Work through the slide deck to complete the activity.
+   
 
-
-
-* Resources:
-- [[https://books.trinket.io/thinkjava/][Think Java]]
-- [[https://introcs.cs.princeton.edu/java/][CS - Sedgewick / Wayne]]
-- [[https://horstmann.com/sjsu/cs046/][Intro to Java - Udacity CS046]]
-- [[https://chortle.ccsu.edu/Java5/index.html#03][Intro to CS using Java - Kjell]]
+### Related resources
+* [Link to the Slide Deck](https://docs.google.com/presentation/d/1sDlMS2IVAtT45zQeBRFI2a9d5kHGu29wZvYlYOvmP_c/edit?usp=sharing)
+* 
