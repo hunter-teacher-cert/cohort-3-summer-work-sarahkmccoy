@@ -36,19 +36,19 @@ public class SortSearch{
     private Random r; 
 
     
-    // public SortSearch(){
-    // 	data = new ArrayList<Integer>();
-    // 	r = new Random();
-    // 	for (int i=0;i<15;i++){
-    // 	    data.add(r.nextInt(20)); // not including 20!
-    // 	}
+    public SortSearch(){
+    	data = new ArrayList<Integer>();
+    	r = new Random();
+    	for (int i=0;i<15;i++){
+    	    data.add(r.nextInt(20)); // not including 20!
+    	}
 	
-    // }
-//Put this is to have a static array to test binary search
-     public SortSearch(){
-       data = new ArrayList( Arrays.asList(new Integer[] { 0,1,2,3,4,5,6,7,8,9,10} ) );
+     }
+// //Put this is to have a static array to test binary search
+//      public SortSearch(){
+//        data = new ArrayList( Arrays.asList(new Integer[] { 0,1,2,3,4,5,6,7,8,9,10} ) );
 	
-    }   
+//     }   
   
     public SortSearch(int size){
     	data = new ArrayList<Integer>();
