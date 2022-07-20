@@ -5,30 +5,57 @@ public class SortSearchDriver {
     public static void main(String[] args) {
 
 
-	// Uncomment these to test part 1
+	// Part 1
 	
-	SortSearch ss = new SortSearch(20);
-	System.out.println(ss);
-	
+	SortSearch ss = new SortSearch(10); // TODO: set this to 20
+	System.out.println("New Array: \n" + ss);
 		
-	// Uncomment these to test part 2
+	// Part 2
 
-	// int i;
-	// i = ss.findSmallestIndex(0);
-	// System.out.println("ss["+ i +"] = "+ss.get(i)+" : " + ss);
+	 int i;
+	 i = ss.findSmallestIndex(0);
+	 System.out.println("Starting my search at 0");
+	 System.out.println("ss["+ i +"] = "+ss.get(i)+" : " + ss);
+   System.out.println("Starting my search at 3");
+	 i = ss.findSmallestIndex(3);
+	 System.out.println("ss["+ i + "] = "+ss.get(i)+" : " + ss);
 
-	// i = ss.findSmallestIndex(3);
-	// System.out.println("ss["+ i + "] = "+ss.get(i)+" : " + ss);
+    // Test for invalid index
+    System.out.println("Starting my search at 10"); // TODO: set this to 20
+	  i = ss.findSmallestIndex(10);
+    System.out.println("Starting my search at -2");
+	  i = ss.findSmallestIndex(10);
 	
 	// Uncomment these to test part 3
-
-	// System.out.println(ss);
-	// ss.sort();
-	// System.out.println(ss);
+    System.out.println("Sorted array:");
+  	System.out.println(ss);
+  	ss.sort();
+  	System.out.println(ss);
 	
 
+	 SortSearch searchArray = new SortSearch();
+    System.out.println("Array used by search methods:");
+  	System.out.println(searchArray);
+      
+    // Test linearSearch
+    System.out.println("Element 5 is located at index (linearSearch): " + searchArray.linearSearch(5));
+      
+    // Test binarySearch
+
+    System.out.println("Element 2 is located at index (binarySearch): " + searchArray.binarySearch(2));
+
+    System.out.println("Element 10 is located at index (binarySearch): " + searchArray.binarySearch(10));
+      
+    System.out.println("Element 5 is located at index (binarySearch): " + searchArray.binarySearch(5));
+
+    System.out.println("Element 0 is located at index (binarySearch): " + searchArray.binarySearch(0));
+
+    System.out.println("Element 9 is located at index (binarySearch): " + searchArray.binarySearch(9));
+
+    System.out.println("Element 11 is located at index (binarySearch): " + searchArray.binarySearch(11));
+    }
+}
 
 	      
 
-    }
-}
+    
