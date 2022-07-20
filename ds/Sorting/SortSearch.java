@@ -159,10 +159,10 @@ public class SortSearch{
 	//   otherwise, update high, low, and middle
 
       int lowIndex = 0;
-      int highIndex = data.size();
-      int middleIndex = data.size()/ 2;//-1 one here?
-
-      while (lowIndex < highIndex){
+      int highIndex = data.size() - 1;
+      int middleIndex = data.size()/ 2;
+//Stop searching if you "miss" the value, ie the low and high collide.
+      while (lowIndex <= highIndex){
 
         if (value == data.get(middleIndex)){
           return middleIndex;
@@ -178,7 +178,6 @@ public class SortSearch{
 	    return -1;
 	    
     }
-    
     /**
        Implement a RECURSIVE binary search as specified by the comments
        
