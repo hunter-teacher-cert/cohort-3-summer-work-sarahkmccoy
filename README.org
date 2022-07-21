@@ -1,25 +1,77 @@
-# CS Unplugged Activity Plan
-#### by Team High 5!!!
-Roster: Alicia Wade, Sarah McCoy, Ed Hawkins
+# Scaffolding Techniques
+#### by Team High 5!
+Roster: Sarah McCoy, Alicia Wade, Tanya Wardally, Ed Hawkins
 
-# Exploring Variables / Baggies and Sticky Notes as Manipulatives
 
-### Background
-This activity is a re-mix of an activity from Code.org.
+### Technique: Tiered Products
 
-### Participant pre-requisites
-Students should know what variables and operators are. The activity is written for javascript but can be adopted to be language agnostic.
+#### Well-suited to...
+* coding projects
+* "unplugged" activities
+* most student deliverables
 
-### Scaffolding / Differentiation 
-* Student groups can work independently to complete the activity or work with the instructor for scaffolding 
-* Groups of 3 or 4 are suggested (pairs are ok)
-* Use the extension activity for more advanced students.
+#### Example
+* Beginner / Intermediate / Advanced / Challenge level tasks/products/deliverables
 
-### Go!
-1. Get a copy of the slide deck and a pack of materials.
-1. Work through the slide deck to complete the activity.
-   
+
+### Technique: Comments/Directions
+
+#### Well-suited to...
+* larger tiered projects
+* gets students to starting point
+* helps students connect psuedocode to actual syntax
+
+#### Example
+* students are working on ieration - loops & condtionals
+* program tracing on paper
+* code snippet to illustrate
+* etc
+
+#### Technique: Starter Code
+
+#### Well-suited to...
+* coding assignments with time constraints (i.e. class period, etc.)
+* focus on the specific learning target of the activity
+  
+
+#### Example
+* Most (all?) of the coding projects for the Hunter College program
+  
+
+#### Technique: Live Coding
+
+#### Well-suited to...
+* supports all level coders at the same time
+* multi-player
+* promote student interaction
+* remote learning
+
+#### Example
+* Any new concept taught
+* code snippet to illustrate
+* 
+  
+### Technique: Pre-recorded "Live Coding"
+
+#### Well-suited to...
+* Asynchronous/remote activities
+* Differentiating instruction
+* Helping students with attendence challenges
+* Teaching best practices: keyboard shortcuts, naming conventions, save often, etc.
+
+#### Example
+* Record screen while talking through a coding activity
+* Record student demos and post (with permission)
+* 
+
+
+* * *
 
 ### Related resources
-* [Link to the Slide Deck](https://docs.google.com/presentation/d/1sDlMS2IVAtT45zQeBRFI2a9d5kHGu29wZvYlYOvmP_c/edit?usp=sharing)
-* 
+* [a link (this is the visible text)](https://xkcd.com)
+* for when you just want to show the link (gh will still make it clickable): https://xkcd.com
+* a story
+* a book
+* name of a person who know a lot
+* etc
+

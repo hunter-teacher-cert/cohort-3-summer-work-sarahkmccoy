@@ -45,10 +45,10 @@ public class SortSearch{
 	
      }
 // //Put this is to have a static array to test binary search
-//      public SortSearch(){
-//        data = new ArrayList( Arrays.asList(new Integer[] { 0,1,2,3,4,5,6,7,8,9,10} ) );
+	// public SortSearch(){
+ //       data = new ArrayList<Integer>( Arrays.asList(new Integer[] { 0,1,2,3,4,5,6,7,8,9,10 } ) );
 	
-//     }   
+   // }   
   
     public SortSearch(int size){
     	data = new ArrayList<Integer>();
@@ -161,7 +161,7 @@ public class SortSearch{
       int lowIndex = 0;
       int highIndex = data.size() - 1;
       int middleIndex = data.size()/ 2;
-//Stop searching if you "miss" the value, ie the low and high collide.
+//Stop searching if you "miss" the value, ie the low and high collide.  We notice that this does not necessarily find the FIRST occurence
       while (lowIndex <= highIndex){
 
         if (value == data.get(middleIndex)){
@@ -184,14 +184,57 @@ public class SortSearch{
        This algorithm only works on sorted ArrayLists.
     */
 
+	//public int binarySearchGetFirst(int value){
+
+	// Marieke's modification to find FIRST occurence...create assign variables  representing the high, low and middle indices 
+	// // while we're not done:
+	// //   if the item is at data.get(middle), return middle
+	// //   otherwise, update high, low, and middle
+ //      int low = 0;
+ //      int high = data.size();
+ //      int middle = (low + high)/2;
+ //      while(!(low>high)){
+ //        middle = (low + high)/2;
+ //        if (data.get(middle) == value){
+ //          break;
+ //        } else if (data.get(middle)> value){
+ //          high = middle-1;
+ //        } else if (data.get(middle) < value){
+ //          low = middle + 1;
+ //        }
+ //        if (low > high){
+ //          return -1;
+ //        }
+ //      }
+ //       while (true){
+ //         if (data.get(middle) == data.get(middle-1)){
+ //           middle --;
+ //         } else{
+ //           return middle;
+ //         }
+ //       }
+	    
+ //    }
+
+
     public int binarySearchRecursive(int value, int lowIndex, int highIndex){
 
-	// refer to class discussion
-	
-	return 0;
-	    
+      if(highIndex >= lowIndex){
+        int middleIndex = (lowIndex + highIndex) / 2;
+        if (value == data.get(middleIndex)){
+          return middleIndex;
+        }else if (value > data.get(middleIndex)) {
+          lowIndex = middleIndex + 1;
+        //middleIndex = (highIndex + lowIndex) / 2; (This is done by the recursion)
+          return binarySearchRecursive(value, lowIndex, highIndex);
+        }else if (value < data.get(middleIndex)) {
+          highIndex = middleIndex - 1;
+          //middleIndex = (highIndex + lowIndex) / 2;
+          return binarySearchRecursive(value, lowIndex, highIndex);
+        }
+      }
+      return -1;
     }
-    
 	
     public String toString(){
 	return ""+data;
